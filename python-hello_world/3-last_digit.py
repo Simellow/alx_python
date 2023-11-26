@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-num1 = "and is greater than 5"
-num2 = "and is 0"
+num1 = " and is greater than 5"
+num2 = " and is 0"
 num3 = " and is less than 6 and not 0"
 if number < 0:
     last = number % -10
