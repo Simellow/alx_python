@@ -1,8 +1,6 @@
 def fibonacci_sequence(n):
-    num1 = 0
-    num2 = 1
-    for i in range(2,n):
-     num3 = num1 + num2 
-     num1 = num2
-     num2 = num3
-     print(num3, end=" ")
+    if n <= 2:
+        return [0, 1][:n]
+    sequence = fibonacci_sequence(n - 1)
+    sequence.append(sum(sequence[-2:]))
+    return sequence
