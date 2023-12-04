@@ -1,4 +1,4 @@
 def add(a, b):
     a = 1
     b = 2 
-    return a + b == add(a,b)
+    print("{} + {} = add({}, {})".format(a, b), end="\n")
