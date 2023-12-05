@@ -1,7 +1,7 @@
 def no_c(my_string):
     for c in my_string:
         if c in "Cc":
-            no_c = my_string.remove(c, '')
+            no_c = my_string.remove(c)
     return no_c
         
 
