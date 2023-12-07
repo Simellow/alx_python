@@ -1,10 +1,19 @@
 def mutiply_list_map(my_list=[], number=0):
-    new_list = list(map(lambda x: x * number, my_list))
-    return new_list
+    mult = my_list * number
+    list(map(mult, my_list))  
 
-my_list = [1, 2, 3, 4, 6]
-new_list = multiply_list_map(my_list, 4)
-print(new_list)
-print(my_list)
+
+
+# map
+
+#     new_list = list(map(lambda x: x * number, my_list))
+#     return new_list
+
+
+
+# my_list = [1, 2, 3, 4, 6]
+# new_list = multiply_list_map(my_list, 4)
+# print(new_list)
+# print(my_list)
 
  
