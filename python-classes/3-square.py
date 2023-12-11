@@ -19,11 +19,23 @@ class Square:
         """ defining a method that returns the current square area"""    
         return self.__size ** 2
     
-    def get_size(self):
+    @property
+    def square_size(self):
         """Applying the getter method"""
         return self.__size
     
-    def set_name(self, new__size):
+    @square_size.setter
+    def square_size(self, value):
         """Applying the setter method"""
-        self.__size = new__size
+        self.__size = value
+
+
+
+    # def get_size(self):
+    #     """Applying the getter method"""
+    #     return self.__size
+    
+    # def set_name(self, new__size):
+    #     """Applying the setter method"""
+    #     self.__size = new__size
         
