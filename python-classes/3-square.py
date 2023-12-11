@@ -23,7 +23,7 @@ class Square:
         """Applying the getter method"""
         return self.__size
     
-    def set_name(self, new__size = 0):
+    def set_name(self, new__size):
         """Applying the setter method"""
         self.__size = new__size
         
