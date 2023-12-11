@@ -8,8 +8,8 @@ class Square:
         """ An argument where size: size of square """
 
         self.__size = size
-        if size == int:
-            pass
+        if type(size) == int:
+            print(size)
         else: 
             raise TypeError("size must be an integer")
         if size < 0:
