@@ -8,29 +8,28 @@ class Square:
         """ An argument where size: size of square """
 
         self.__size = size
-    
-    @property
-    def square_size(self):
-        """Applying the "getter" method to find size"""
-        return self.__size
-    
-    @square_size.setter
-    def square_size(self, value):
-        """Applying the setter method to  validate that size is an integer that is greater than 0"""
-        if type(value) == int:
-            value
+        if type(size) == int:
+            size
         else: 
             raise TypeError("size must be an integer")
-        if value < 0:
+        if size < 0:
             raise ValueError("size must be >= 0")
-        self.__size = value
-
+    
     def area(self):
         """ defining a method that returns the current square area"""    
         return self.__size ** 2
     
-    
-#remember the deleter for later 
+    @property
+    def size(self):
+        """our getter simply retrieving our data"""
+        return self.__size
+    @size.setter
+    def size(self, value):
+        """Our setter that checks for type of value"""
+        self.__size = value 
+        if type(value) == int:
+            value
+        else: 
+            raise TypeError("size must be an integer")
 
-
-   
+#remember the deleter(like setter) for later 
