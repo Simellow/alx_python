@@ -31,7 +31,7 @@ class Rectangle(BaseGeometry):
         """area function"""
         return self.__width * self.__height
     
-    def __str__(self, width, height):
+    def __str__(self):
         """strrrrrrrr"""
-        return "[Rectangle] {}/{}".format(width, height)
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
     
