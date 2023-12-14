@@ -13,11 +13,25 @@ class BaseGeometry:
         elif value <= 0:
             raise ValueError('{} must be greater than 0'.format(name))
 
+
+
 class Rectangle(BaseGeometry):
-    """Instantiation with width and height"""
-    def __init__(self, width, height):  
-      self.integer_validator("", width)
-      self.integer_validator("", height)
-      self.__width = width
-      self.__height = height
+    """
+    class  that inherits from BaseGeometry
+    """
+    def __init__(self, width, height):
+        """
+            Initialize rectangle from BaseGeometry
+        """
+        self.integer_validator('width', width)
+        self.integer_validator('height', height)
+        self.__width = width
+        self.__height = height
+# class Rectangle(BaseGeometry):
+#     """Instantiation with width and height"""
+#     def __init__(self, width, height):  
+#       self.integer_validator("", width)
+#       self.integer_validator("", height)
+#       self.__width = width
+#       self.__height = height
         
