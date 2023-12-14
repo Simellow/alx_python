@@ -1,4 +1,4 @@
-""" module 10-square contains subclass Square
+"""contains subclass Square
 which inherits from class Rectangle """
 
 Rectangle = __import__('7-rectangle').Rectangle
