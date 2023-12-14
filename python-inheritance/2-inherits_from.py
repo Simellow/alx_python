@@ -1,6 +1,7 @@
-""" function that returns true if the obj is exactly an instance of the specified class and false otherwise"""
+""" module 4-inherits_from contains function inherits_from """
 
-def is_kind_of_class(obj, a_class):
-    """ returns True if object is an instance of the
-    using the is instance method"""
+
+def inherits_from(obj, a_class):
+    """ returns True if the object in an instance of a class
+    that inherited (directly or indirectly) from a specified class """
     return issubclass(type(obj), a_class) and type(obj) != a_class
