@@ -7,10 +7,10 @@ class Base:
     def __init__(self, id=None):
         """constructor for base"""
         self.id = id
-        """if id is not "None", we assign self.id to id
+        """if "id" is not "None", we assign self.id to id,
         otherwise we update our private class attribute.
-         We finally assign the new value to the public 
-         instance attribute id"""
+        Finally assigning the new value to the public 
+        instance attribute id"""
         if id is not None:
             self.id = id
         else: 
