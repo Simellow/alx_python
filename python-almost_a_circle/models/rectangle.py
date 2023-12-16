@@ -1,6 +1,6 @@
 """using the import method to import
 the class Base"""
-Base = __import__('base').Base
+from models.base import Base
 
 """our subclass Rectangle
 that inherits from the parnet class Base"""
