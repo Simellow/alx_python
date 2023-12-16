@@ -27,7 +27,7 @@ class Rectangle(Base):
         """setter for width where height input must be positive integer"""
         if type(value) is not int:
             raise TypeError('width must be an integer')
-        elif value <= 0:
+        if value <= 0:
             raise ValueError('width must be > 0')
         self.__width = value
     # width got and set
