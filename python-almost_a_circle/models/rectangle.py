@@ -8,6 +8,8 @@ class Rectangle(Base):
 
     """Defining our constructor with as our parameters"""
     def __init__(self, width, height, x=0, y=0, id=None):
+        """Assign each argument width, height, x and y 
+        to the right attribute"""
         self.__width = width
         self.__height = height
         self.__x = x
