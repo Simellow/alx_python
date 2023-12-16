@@ -1,47 +1,47 @@
-# class Animal:
+class Animal:
     
-#     alive = True
+    alive = True
 
-#     def __init__(self, name):
-#         self.name = name
+    def __init__(self, name):
+        self.name = name
     
-#     def eat(self):
-#         print("this animal is eating")
-#     def sleep(self):
-#         print("this animal is sleeping")
+    def eat(self):
+        print("this animal is eating")
+    def sleep(self):
+        print("this animal is sleeping")
 
-# class Rabbit(Animal):
+class Rabbit(Animal):
    
-#     # using a method overriding to override the eat method
-#     def eat(self):
-#         print("this rabbit is eating a carrot")
+    # using a method overriding to override the eat method
+    def eat(self):
+        print("this rabbit is eating a carrot")
    
-#     def run(slef):
-#         print("this rabbit is running")
+    def run(slef):
+        print("this rabbit is running")
 
-# class Fish(Animal):
+class Fish(Animal):
     
-#     def swim(self):
-#         print("this fish is swimming")
+    def swim(self):
+        print("this fish is swimming")
 
-# class Eagle(Animal):
+class Eagle(Animal):
     
-#     def fly(self):
-#         print("this eagle is flying")
+    def fly(self):
+        print("this eagle is flying")
 
-# rabbit = Rabbit()
-# fish = Fish()
-# eagle = Eagle()
+rabbit = Rabbit()
+fish = Fish()
+eagle = Eagle()
 
-# print(rabbit.alive)
-# fish.eat()
-# eagle.sleep()
+print(rabbit.alive)
+fish.eat()
+eagle.sleep()
 
-# rabbit.run()
-# fish.swim()
-# eagle.fly()
+rabbit.run()
+fish.swim()
+eagle.fly()
 
-# rabbit.eat()
+rabbit.eat()
 
 
 class Rectangle:
@@ -74,3 +74,21 @@ square = Square(3, 3)
 
 print(cube.volume())
 print(square.area())
+
+
+def shipping_label(*args, **kwargs):
+    for arg in args:
+        print(arg, end=" ")
+    print()
+    for key, value in kwargs.items():
+        print("{}: {}".format(key, value), end=" ")
+    print("{}".format(kwargs.get("zip")))
+    print("{} {}, {}".format(kwargs.get("address"), kwargs.get("street"), kwargs.get("zip")))
+
+
+shipping_label("Simelo", "Aberra", "Bekele", 
+               address = "123", street = "fakestreet", zip = "1883")
+
+"""given an instance where you don't want to print the None 
+if a key doesn't exist use an if else statement and
+pecify what you want it to print instead"""
