@@ -3,6 +3,7 @@ class Base:
     """private instance attribute initialization"""
     __nb_objects = 0
     def __init__(self, id=None):
+        """constructor for base"""
         self.id = id
         if id is not None:
             self.id = id
