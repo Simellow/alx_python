@@ -83,4 +83,6 @@ class Rectangle(Base):
     
     # [Rectangle] (<id>) <x>/<y> - <width>/<height>
     
-    
+    def display(self):
+        for _ in range(self.x):
+            print("#" * self.y)
