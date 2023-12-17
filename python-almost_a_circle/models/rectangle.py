@@ -88,4 +88,6 @@ class Rectangle(Base):
         """method that returns in stdout the Rectangle 
         instance with the character # for x and y"""
         for _ in range(self.y):
-            print("#" * self.x)
+            print()
+        for _ in range(self.height):
+            print(' ' * self.x + '#' * self.width)
