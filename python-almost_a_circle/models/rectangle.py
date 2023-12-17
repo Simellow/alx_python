@@ -87,5 +87,5 @@ class Rectangle(Base):
     def display(self):
         """method that returns in stdout the Rectangle 
         instance with the character # for x and y"""
-        for _ in range(self.x):
-            print("#" * self.y)
+        for _ in range(self.y):
+            print("#" * self.x)
