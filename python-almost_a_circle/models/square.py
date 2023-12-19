@@ -20,7 +20,7 @@ class Square(Rectangle):
         self.width = value
     
     def __str__(self):
-        """informal string representation of the square"""
+        """__str__ for square"""
         return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id, self.x, self.y, self.width)
 
     
