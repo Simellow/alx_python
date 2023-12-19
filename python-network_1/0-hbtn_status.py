@@ -5,12 +5,15 @@
 # """ """
 # requests.get(url)
 #!/usr/bin/python3
-''' fetches https://intranet.hbtn.io/status '''
-import urllib.request as req
-if __name__ == "__main__":
-    with req.urlopen('https://alu-intranet.hbtn.io/status') as res:
-        html = res.read()
-        print('Body response:')
-        print('\t- type: {}'.format(type(html)))
-        print('\t- content: {}'.format(html))
-        print('\t- utf8 content: {}'.format(html.decode('utf-8')))
+import requests
+
+url = "https://alu-intranet.hbtn.io/status"
+response = requests.get(url)
+
+if response.status_code == 200:
+    print("Body response:")
+    for line in response.text.splitlines():
+        print("\t- " + line)
+else:
+    print("Error: Failed to fetch the URL. Status code:", response.status_code)
+
