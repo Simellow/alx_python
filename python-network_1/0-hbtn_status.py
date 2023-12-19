@@ -10,8 +10,8 @@
 # url = "https://alu-intranet.hbtn.io/status"
 # response = requests.get(url)
 
-# python
+"""python"""
 import requests
-
+""" module documented"""
 response = requests.get("https://alu-intranet.hbtn.io/status")
 
