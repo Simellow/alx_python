@@ -173,6 +173,9 @@ class Rectangle(Base):
         self.__y = value
     # y got and set
     
-    
+import json
+
+print(dir(json))
+
 
 
