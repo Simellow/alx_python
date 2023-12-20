@@ -2,13 +2,9 @@
 
 Usage: ./1-hbtn_header.py <URL>
 """
-import sys
 import requests
+import sys
 
-
-if __name__ == "__main__":
-    url = sys.argv[1]
-
-    request = requests.Request(url)
-    with requests.urlopen(request) as response:
-        print(dict(response.headers).get("X-Request-Id"))
+if __name__ == '__main__':
+    with requests.urlopen(sys.argv[1]) as response:
+        print("{}".format(response.getheader('X-Request-Id')))
