@@ -2,10 +2,10 @@ import urllib.request
 
 print(dir(requests))
 
-# import requests
+import requests
 
-# response = requests.get("https://alu-intranet.hbtn.io/status")
+response = requests.get("https://alu-intranet.hbtn.io/status")
 
-# # # print("Body response:")
-# # # print("\t- type:", type(response.text))
-# # # print("\t- content:", response.text)
+print("Body response:")
+print("\t- type:", type(response.text))
+print("\t- content:", response.text)

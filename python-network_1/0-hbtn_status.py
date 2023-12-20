@@ -1,12 +1,19 @@
 """importing requests module"""
 import requests
 
-url = "https://alu-intranet.hbtn.io/status"
+response = requests.get("https://alu-intranet.hbtn.io/status")
 
-response = requests.get(url)
+print("Body response:")
+print("\t- type:", type(response.text))
+print("\t- content:", response.text)
+# import requests
 
-print(response)
+# url = "https://alu-intranet.hbtn.io/status"
 
-# Body response:$
-#     - type: <class 'str'>$
-#     - content: OK$
+# response = requests.get(url)
+
+# print(response)
+
+# # Body response:$
+# #     - type: <class 'str'>$
+# #     - content: OK$
