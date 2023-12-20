@@ -7,10 +7,6 @@ class Square(Rectangle):
         """inheriting our constructor using our super class
         width and height will be assigned to the value of size"""
         super().__init__(size, size, x, y, id)
-    def __str__(self):
-        """__str__ for square"""
-        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id, self.x, self.y, self.width)
-    
     @property
     def size(self):
         """getter for size"""
