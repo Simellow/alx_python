@@ -1,47 +1,25 @@
 """importing the class 'Rectangle' """
 from models.rectangle import Rectangle
 
-
 class Square(Rectangle):
-    """ empty Square class """
+    """Defining our class constructor"""
     def __init__(self, size, x=0, y=0, id=None):
-        """ initializes empty Square """
+        """inheriting our constructor using our super class
+        width and height will be assigned to the value of size"""
         super().__init__(size, size, x, y, id)
-
     @property
     def size(self):
-        """ finds size """
+        """getter for size"""
         return self.width
 
     @size.setter
     def size(self, value):
-        """ validates size is same as width and height """
-        self.width = value
+        """setting our height and width to equal values"""
         self.height = value
-
+        self.width = value
+    
     def __str__(self):
-        """ prints the unoffical string representation of square """
-        return "[Square] ({:d}) {:d}/{:d} - {:d}"\
-            .format(self.id, self.x, self.y, self.width)
-
-    def update(self, *args, **kwargs):
-        """ assigns attributes to square """
-        if len(args) != 0:
-            i = 0
-            square_attrs = ["id", "size", "x", "y"]
-            for arg in args:
-                setattr(self, square_attrs[i], args[i])
-                i += 1
-        else:
-            for k, v in kwargs.items():
-                setattr(self, k, v)
-
-    def to_dictionary(self):
-        """ returns dictionary representation of square """
-        square_dict = {}
-        square_attrs = ["id", "size", "x", "y"]
-        for attr in square_attrs:
-            square_dict[attr] = getattr(self, attr)
-        return square_dict
+        """__str__ for square"""
+        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id, self.x, self.y, self.width)
 
     
