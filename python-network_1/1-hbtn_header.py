@@ -35,5 +35,5 @@ if __name__ == "__main__":
 
     url = sys.argv[1]
     request_id = get_request_id(url)
-    print("X-Request-Id:", request_id)
+    print(request_id)
 
