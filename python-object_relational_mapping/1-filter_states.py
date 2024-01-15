@@ -8,7 +8,9 @@ db = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
 #getting a cursor 
 cur = db.cursor()
 
-cur.execute("SELECT * from states WHERE name LIKE 'N%' ORDER BY states.id")
+cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+
+# "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC"
 
 myresult = cur.fetchall()
 
