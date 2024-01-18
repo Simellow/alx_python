@@ -8,8 +8,8 @@ db = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
 #getting a cursor 
 cur = db.cursor()
 
-
-cur.execute("SELECT * from states WHERE name LIKE %s ORDER BY states.id",(argv[4],))
+# executing a script that lists all cities from the database
+cur.execute("SELECT cities.id, cities.name, states.name FROM citiesINNER JOIN states ON cities.state_id = states.id ORDER BY cities.id")
 
 #printing result 
 myresult = cur.fetchall()
@@ -19,4 +19,4 @@ for state in myresult:
 
 # Closing all cursors and databases 
 cur.close()
-db.close()
+db.close() 
