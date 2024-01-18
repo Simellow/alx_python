@@ -1,6 +1,6 @@
 #import MySQLdb & sys
 import MySQLdb
-import sys
+from sys import argv
 
 #connecting to mysqldb
 db = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
@@ -8,7 +8,7 @@ db = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
 #getting a cursor 
 cur = db.cursor()
 
-cur.execute("SELECT * FROM states WHERE name= '{}' ORDER BY states.id ASC".format(sys.argv[4]))
+cur.execute("SELECT * from states WHERE name LIKE %s ORDER BY states.id",(argv[4],))
 
 
 
