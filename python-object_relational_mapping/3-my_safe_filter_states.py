@@ -9,7 +9,7 @@ db = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
 cur = db.cursor()
 
 #executing our script that is safe from sql injections 
-cur.execute("SELECT * from states WHERE name LIKE %s ORDER BY states.id",(argv[4],))
+cur.execute("SELECT * from states WHERE name LIKE %s ORDER BY states.id",(argv[4]))
 
 #printing result
 myresult = cur.fetchall()
