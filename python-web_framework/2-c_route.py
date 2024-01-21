@@ -15,9 +15,8 @@ def hbnb():
 
 @app.route('/c/<text>', strict_slashes=False)
 def show_user_profile(text):
-    string = text
-    new_string = string.replace("_", " ")
-    return f'C {escape(text)}'
+    text = escape(text).replace("_", " ")
+    return f'C {text}'
 
 
 if __name__ == "__main__":
