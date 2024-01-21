@@ -19,7 +19,7 @@ def c(text):
     return f'C {text}'
 
 @app.route('/python/<text>', strict_slashes=False)
-def python(text="is cool"):
+def python(text):
     text = escape(text).replace("_", " ")
     return 
 
