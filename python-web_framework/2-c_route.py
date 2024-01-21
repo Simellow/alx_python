@@ -14,7 +14,7 @@ def hbnb():
     return "HBNB"
 
 @app.route('/c/<text>', strict_slashes=False)
-def show_user_profile(text):
+def c(text):
     text = escape(text).replace("_", " ")
     return f'C {text}'
 
