@@ -15,18 +15,14 @@ def hbnb():
 
 @app.route('/c/<text>', strict_slashes=False)
 def c(text):
-    text = escape(text).replace("_", " ")
-    return f'C {text}'
+    return 'C {}'.format((text).replace("_", " "))
 
 @app.route('/python/<text>', strict_slashes=False)
-def python(text):
-    text = .replace("_", " ")
-    return 
+def python(text ='is cool'):
+    return 'Python {}'.format((text).replace("_", " "))
 
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="5000")
 
-# /python/<text>: display “Python ”, followed by the value of the text variable (replace underscore _ symbols with a space )
-# The default value of text is “is cool”
 
