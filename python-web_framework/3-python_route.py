@@ -20,7 +20,7 @@ def c(text):
 
 @app.route('/python/<text>', strict_slashes=False)
 def python(text):
-    text = escape(text).replace("_", " ")
+    text = .replace("_", " ")
     return 
 
 
