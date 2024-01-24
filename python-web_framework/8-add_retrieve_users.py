@@ -58,6 +58,11 @@ def add_user():
     else:
         return render_template('add_user.html')
     # return redirect(url_for('index'))
+
+@app.route('/users', methods=['GET'])
+def users():
+    users = User.query.all()
+    return render_template('8-users.html', users=users)
         
 
 
