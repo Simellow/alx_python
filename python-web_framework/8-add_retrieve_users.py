@@ -30,12 +30,12 @@ class User(db.Model):
     email = db.Column(db.String(255), unique=True, nullable=False)
 
 
-# Create the database tables
+
 def create_tables():
     with app.app_context():
         db.create_all()
 
-create_tables()  # This calls the function to create tables
+create_tables()  
 
 
 @app.route('/', strict_slashes=False)
