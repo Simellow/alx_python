@@ -13,11 +13,9 @@ class User(db.Model):
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
 
-# Add your User table creation here
 
-# ...
 
-# Update a User
+# Update User
 @app.route('/update_user/<int:user_id>', methods=['GET', 'POST'])
 def update_user(user_id):
     user = User.query.get(user_id)
@@ -44,7 +42,7 @@ def update_user(user_id):
 
     return render_template('update_user.html', user=user)
 
-# Delete a User
+# Delete User
 @app.route('/delete_user/<int:user_id>', methods=['GET', 'POST'])
 def delete_user(user_id):
     user = User.query.get(user_id)
@@ -60,8 +58,8 @@ def delete_user(user_id):
 
     return render_template('delete_user.html', user=user)
 
-# Include other routes and configurations as needed...
 
-if name == '__main__':
+
+if __name__ == '__main__':
     db.create_all()
     app.run(host='0.0.0.0', port=5000)

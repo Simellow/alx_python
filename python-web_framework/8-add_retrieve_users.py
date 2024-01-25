@@ -2,7 +2,6 @@ from flask import Flask, request, render_template, flash, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 import re
 import sys
-from sqlalchemy.exc import IntegrityError
 
 # Check for command-line arguments
 if len(sys.argv) != 4:
@@ -57,7 +56,6 @@ def add_user():
             flash('Email already exists!', 'error')
     else:
         return render_template('add_user.html')
-    return redirect(url_for('index'))
 
 @app.route('/users', methods=['GET'])
 def users():
