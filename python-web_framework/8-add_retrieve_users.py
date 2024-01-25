@@ -57,7 +57,7 @@ def add_user():
             flash('Email already exists!', 'error')
     else:
         return render_template('add_user.html')
-    # return redirect(url_for('index'))
+    return redirect(url_for('index'))
 
 @app.route('/users', methods=['GET'])
 def users():
