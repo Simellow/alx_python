@@ -14,6 +14,6 @@ print("\t- content:", response.text)
 
 # print(response)
 
-# # Body response:$
-# #     - type: <class 'str'>$
-# #     - content: OK$
+# Body response:$
+#     - type: <class 'str'>$
+#     - content: OK$
