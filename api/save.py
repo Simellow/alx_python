@@ -1,52 +1,44 @@
 import requests
-import csv
+import json
 import sys
 
-def get_employee_todo_progress(employee_id):
-    # API endpoints
+def get_all_employees_todo_progress():
     base_url = "https://jsonplaceholder.typicode.com"
-    user_url = f"{base_url}/users/{employee_id}"
-    todos_url = f"{base_url}/users/{employee_id}/todos"
+    users_url = f"{base_url}/users"
 
     try:
-        # Fetch employee details
-        user_response = requests.get(user_url)
-        user_data = user_response.json()
-        employee_name = user_data["name"]
+        users_response = requests.get(users_url)
+        users_data = users_response.json()
 
-        # Fetch TODO list
-        todos_response = requests.get(todos_url)
-        todos_data = todos_response.json()
+        all_employees_tasks = {}
 
-        # Calculate progress
-        total_tasks = len(todos_data)
-        done_tasks = sum(1 for task in todos_data if task["completed"])
+        for user in users_data:
+            employee_id = user["id"]
+            todos_url = f"{base_url}/users/{employee_id}/todos"
+            todos_response = requests.get(todos_url)
+            todos_data = todos_response.json()
 
-        # Create CSV file
-        csv_filename = f"{employee_id}.csv"
-        with open(csv_filename, mode="w", newline="") as csvfile:
-            fieldnames = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
-            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-            writer.writeheader()
+            tasks = [
+                {
+                    "username": user["username"],
+                    "task": task["title"],
+                    "completed": task["completed"]
+                }
+                for task in todos_data
+            ]
 
-            for task in todos_data:
-                writer.writerow({
-                    "USER_ID": employee_id,
-                    "USERNAME": employee_name,
-                    "TASK_COMPLETED_STATUS": "Completed" if task["completed"] else "Not Completed",
-                    "TASK_TITLE": task["title"]
-                })
+            all_employees_tasks[employee_id] = tasks
 
-        print(f"CSV file '{csv_filename}' created successfully!")
+        # Write the dictionary to a JSON file
+        filename = "todo_all_employees.json"
+        with open(filename, "w", encoding="utf-8") as json_file:
+            json.dump(all_employees_tasks, json_file, ensure_ascii=False, indent=4)
+
+        print(f"Data exported to {filename}")
 
     except requests.RequestException as e:
         print(f"Error fetching data: {e}")
         sys.exit(1)
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python script.py <employee_id>")
-        sys.exit(1)
-
-    employee_id = int(sys.argv[1])
-    get_employee_todo_progress(employee_id)
+    get_all_employees_todo_progress()
